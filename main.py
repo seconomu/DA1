@@ -22,7 +22,8 @@ Next, prompt the user to enter a starting value (start) and an ending value (end
 inclusive with the value 0. Then print the list to inform and show the user the modified list.
 
 Bonus (3 pts) 
-Print out the list in reverse in the following format (all on one line, numbers separated by _: 91.0 _ 25.1 _ 61.8 _ 75.6 _ 28.2 _ 50.5 _ 90.8 _ 58.3 _ 47.7 _ 30.3 _ 78.4 _ 40.5 _ 51.1 _ 25.9 _ 42.1 _ 75.8 _ 84.4
+Print out the list in reverse in the following format (all on one line, numbers separated by _: 
+91.0 _ 25.1 _ 61.8 _ 75.6 _ 28.2 _ 50.5 _ 90.8 _ 58.3 _ 47.7 _ 30.3 _ 78.4 _ 40.5 _ 51.1 _ 25.9 _ 42.1 _ 75.8 _ 84.4
 Do not use reverse() to do this. You must write your own loop to solve this problem.
 '''
 
@@ -53,7 +54,7 @@ means_average = means_average / len(list_of_means) # get the average of the mean
 std_dev = math.sqrt(means_average)
 
 #sort the list to get the median, largest,  and smallest numbers
-my_list_sorted = my_List
+my_list_sorted = my_List[:] 
 my_list_sorted.sort()
 median_number = my_list_sorted[int (round((len(my_list_sorted)/2),0))]
 smallest_number = my_list_sorted[0]
@@ -68,3 +69,15 @@ print("The median number in the list is", median_number)
 print("The smallest number in the list is", smallest_number)
 print("The largest number in the list is", largest_number)
 
+# change the list
+print("")
+print("Let's change some numbers on the list.")
+lower_value = float(input("Please enter a low range value: "))
+upper_value = float(input("Please enter an upper range value: "))
+my_list_change = my_List[:]
+for x in range(0, len(my_list_change)-1):
+    if my_list_change[x] >= lower_value and my_list_change[x] <= upper_value:
+        my_list_change[x] = 0
+
+print("The original list looks like this:", my_List)
+print("Here is your altered list:", my_list_change)
