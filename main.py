@@ -9,7 +9,7 @@ Write a program (main.py) that declares a list with the following floating point
 Write code to compute and display the following statistics summarizing the above list of numbers (the only module you may use to compute these statistics is the math module... that means no statistics, numpy, scipy, pandas, etc...):
 •	Count of the numbers
 •	Average (mean) of the numbers
-•	Standard deviation of the numbers (link to formula)
+•	Standard deviation of the numbers 
 •	Median number
 •	Smallest number
 •	Largest number
@@ -22,18 +22,32 @@ Do not use reverse() to do this. You must write your own loop to solve this prob
 
 import math
 
+# build the list
 my_List = [84.4, 75.8, 42.1, 25.9, 51.1, 40.5, 78.4, 30.3, 47.7, 58.3, 90.8, 50.5, 28.2, 75.6, 61.8, 25.1, 91.0]
-list_Sum = 0
+
+# get the number of elements
 list_Length = len(my_List)
 
-print(my_List)
-print(len(my_List))
+# get the sum of the list elements
+list_Sum = 0
 for element in my_List:
     list_Sum = list_Sum + element
 
+# calculate the average value of the elements (the mean)
 list_average = list_Sum / list_Length
 print(list_average)
 
-
+# get the standard deviation
+list_of_means = []
+for x in my_List: # subtract mean from element
+    list_of_means.append((x-list_average) ** 2)
+means_average = 0
+for x in list_of_means: # get the sum of the means
+    means_average = means_average + x
+means_average = means_average / len(list_of_means) # get the average of the means
+std_dev = math.sqrt(means_average)
+print(means_average)
+print(list_of_means)
+print(std_dev)
 
 
