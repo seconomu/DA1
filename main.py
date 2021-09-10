@@ -52,11 +52,19 @@ for x in list_of_means: # get the sum of the means
 means_average = means_average / len(list_of_means) # get the average of the means
 std_dev = math.sqrt(means_average)
 
+#sort the list to get the median, largest,  and smallest numbers
+my_list_sorted = my_List
+my_list_sorted.sort()
+median_number = my_list_sorted[int (round((len(my_list_sorted)/2),0))]
+smallest_number = my_list_sorted[0]
+largest_number = my_list_sorted[len(my_list_sorted)-1]
+
 # print the results
 print("The list is: ", my_List)
 print("There are", list_Length, "numbers in the list.")
 print("The average value of the the numbers in the list is: ", "{:.2f}".format(list_average))
 print("The standard deviation of the numbers in the list is: ", round(std_dev, 2))
-
-
+print("The median number in the list is", median_number)
+print("The smallest number in the list is", smallest_number)
+print("The largest number in the list is", largest_number)
 
