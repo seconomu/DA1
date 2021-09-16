@@ -81,3 +81,10 @@ for x in range(0, len(my_list_change)-1):
 
 print("The original list looks like this:", my_List)
 print("Here is your altered list:", my_list_change)
+
+# print the list in reverse
+element = list_Length - 1
+for x in range (1,list_Length):
+    print(my_List[element], end=" _ ")
+    element -= 1
+print(my_List[0])
